@@ -1,0 +1,161 @@
+/* ===== Camila Rojas · página de creadora de contenido =====
+   Estilo: neo-brutalista juvenil. Bordes gruesos, sombras duras y colores planos. */
+
+:root {
+  color-scheme: light;
+  --sky: #bfe3ff;
+  --paper: #ffffff;
+  --ink: #111111;
+  --pink: #ff5c8a;
+  --yellow: #ffd23f;
+  --mint: #7ee0b5;
+  --muted: #4a4a55;
+  --border: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+  --font-display: "Bricolage Grotesque", "Arial Black", Arial, sans-serif;
+  --font-body: "DM Sans", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--sky);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+svg { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 4px solid var(--pink); outline-offset: 3px; }
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ---------- Navegación ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper);
+  border-bottom: var(--border);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 10px 24px; flex-wrap: wrap; padding-block: 12px; }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.brand-dot { width: 22px; height: 22px; background: var(--pink); border: var(--border); border-radius: 50%; }
+.nav ul { display: flex; gap: 6px 22px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav ul a { font-weight: 700; text-decoration: none; padding: 4px 0; border-bottom: 3px solid transparent; }
+.nav ul a:hover { border-bottom-color: var(--pink); }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block; padding: 12px 22px;
+  font-weight: 700; text-decoration: none;
+  background: var(--yellow); color: var(--ink);
+  border: var(--border); border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.btn-pink { background: var(--pink); }
+.btn-white { background: var(--paper); }
+
+/* ---------- Hero ---------- */
+.hero .wrap { display: flex; align-items: center; gap: 40px 56px; flex-wrap: wrap; padding-block: 56px 64px; }
+.hero-text { flex: 1 1 360px; min-width: 0; }
+.sticker {
+  display: inline-block; background: var(--yellow); border: var(--border); border-radius: 8px;
+  font-weight: 700; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: 5px 12px; transform: rotate(-2deg); margin-bottom: 20px;
+}
+.hero h1 { font-size: clamp(2.8rem, 9vw, 5.6rem); font-weight: 800; letter-spacing: -.02em; }
+.hero h1 span { background: var(--pink); padding: 0 .12em; border: var(--border); border-radius: 10px; display: inline-block; transform: rotate(-1.5deg); }
+.handle { margin-top: 14px; font-weight: 700; font-size: 1.1rem; }
+.lead { margin-top: 16px; max-width: 46ch; font-size: 1.15rem; }
+.actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+.hero-art { flex: 1 1 300px; min-width: 0; max-width: 420px; margin-inline: auto; position: relative; }
+.photo { background: var(--mint); border: var(--border); border-radius: 24px; box-shadow: 10px 10px 0 var(--ink); overflow: hidden; }
+.float { position: absolute; background: var(--paper); border: var(--border); border-radius: 12px; padding: 7px 13px; font-weight: 700; font-size: .9rem; box-shadow: 4px 4px 0 var(--ink); }
+.float-1 { top: 18px; left: -14px; transform: rotate(-5deg); background: var(--yellow); }
+.float-2 { bottom: 34px; right: -12px; transform: rotate(4deg); background: var(--pink); }
+
+/* ---------- Cinta ---------- */
+.marquee { background: var(--ink); color: var(--paper); border-block: var(--border); overflow: hidden; }
+.marquee p { padding: 14px 0; white-space: nowrap; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; display: flex; gap: 32px; width: max-content; animation: slide 26s linear infinite; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ---------- Estadísticas ---------- */
+.stats { padding-block: 56px 8px; }
+.stats ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+.stat { flex: 1 1 200px; min-width: 0; background: var(--paper); border: var(--border); border-radius: 18px; box-shadow: var(--shadow); padding: 20px 22px; }
+.stat strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 6px; font-weight: 700; color: var(--muted); }
+.stat.s1 { background: var(--yellow); }
+.stat.s2 { background: var(--pink); }
+.stat.s3 { background: var(--mint); }
+.stat.s1 span, .stat.s2 span, .stat.s3 span { color: var(--ink); }
+
+/* ---------- Secciones ---------- */
+section { padding-block: 72px; }
+.kicker { display: inline-block; background: var(--ink); color: var(--paper); font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+.title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.01em; }
+
+/* ---------- Biografía ---------- */
+.bio-grid { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 32px; align-items: flex-start; }
+.bio-text { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.bio-text p { font-size: 1.08rem; }
+.facts { flex: 1 1 280px; min-width: 0; background: var(--paper); border: var(--border); border-radius: 18px; box-shadow: var(--shadow); padding: 24px; }
+.facts h3 { font-size: 1.3rem; margin-bottom: 14px; }
+.facts dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; }
+.facts dt { font-weight: 700; }
+.facts dd { margin: 0; color: var(--muted); min-width: 0; }
+
+/* ---------- Trayectoria ---------- */
+.timeline-sec { background: var(--paper); border-block: var(--border); }
+.timeline { list-style: none; margin: 36px 0 0; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+.timeline li { flex: 1 1 220px; min-width: 0; border: var(--border); border-radius: 16px; padding: 20px; background: var(--sky); }
+.timeline li:nth-child(2) { background: var(--yellow); }
+.timeline li:nth-child(3) { background: var(--pink); }
+.timeline li:nth-child(4) { background: var(--mint); }
+.timeline .year { font-family: var(--font-display); font-weight: 800; font-size: 2rem; display: block; }
+.timeline h3 { font-size: 1.1rem; margin: 6px 0; }
+.timeline p { font-size: .98rem; }
+
+/* ---------- Videos ---------- */
+.videos { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
+.video { flex: 1 1 280px; min-width: 0; background: var(--paper); border: var(--border); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: transform .15s ease; }
+.video:hover { transform: translateY(-4px); }
+.thumb { border-bottom: var(--border); position: relative; }
+.thumb svg { width: 100%; }
+.platform { position: absolute; top: 12px; left: 12px; background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; font-weight: 700; font-size: .78rem; padding: 3px 11px; }
+.video-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+.video h3 { font-size: 1.2rem; }
+.meta { color: var(--muted); font-weight: 600; font-size: .92rem; }
+
+/* ---------- Contacto ---------- */
+.contact-box { background: var(--yellow); border: var(--border); border-radius: 28px; box-shadow: 10px 10px 0 var(--ink); padding: clamp(28px, 5vw, 56px); display: flex; gap: 28px 48px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.contact-box > div { flex: 1 1 320px; min-width: 0; }
+.contact-box p { margin-top: 12px; max-width: 46ch; font-size: 1.1rem; }
+.mail { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.1rem, 3.4vw, 1.5rem); background: var(--paper); border: var(--border); border-radius: 12px; padding: 12px 18px; overflow-wrap: anywhere; user-select: all; }
+
+/* ---------- Redes ---------- */
+.socials { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--ink); color: var(--paper); border-top: var(--border); }
+footer .wrap { padding-block: 32px; display: flex; gap: 12px 32px; justify-content: space-between; flex-wrap: wrap; font-size: .95rem; }
+footer p { color: #d5d5dc; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee p { animation: none; }
+  .btn, .video { transition: none; }
+}
